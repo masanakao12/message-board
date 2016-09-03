@@ -9,10 +9,7 @@ class MessagesController < ApplicationController
     @message = Message.new(message_params)
     if @message.save
     redirect_to root_path , notice: 'メッセージを保存しました'
-<<<<<<< HEAD
-  end
-=======
-    
+
     else
       #メッセージが保存できなかったとき
         @messages = Message.all
@@ -20,8 +17,7 @@ class MessagesController < ApplicationController
         render 'index'
       end
     end
->>>>>>> challenge1
-
+    
   private
   def message_params
     params.require(:message).permit(:name, :body)
